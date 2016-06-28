@@ -1,0 +1,281 @@
+<template name="indicaPsicoHome">
+    <head>
+        <title>IndicaPsico</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo center"><img src="img/logo_indicapsico.png"
+                                                                    style="width: 40px;height: auto"></a>
+            <ul class="right hide-on-med-and-down">
+            <!--<li><a href="#">Navbar Link</a></li>-->
+            </ul>
+
+            <!--<ul id="nav-mobile" class="side-nav">-->
+            <!--<li><a href="#">Navbar Link</a></li>-->
+            <!--</ul>-->
+            <!--<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>-->
+        </div>
+        </nav>
+
+        <div id="index-banner" class="parallax-container">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <br><br>
+                    <h1 class="header center" style="color: #0088b9;">Indica Psico</h1>
+                    <div class="row center">
+                        <h5 class="header col s12 light">Encontre agora o melhor psicólogo para você!</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax"><img src="img/pexels-photo-109107.jpeg"></div>
+        </div>
+
+
+        <div class="container">
+            <div class="section">
+
+                <!--   Icon Section   -->
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <div class="center">
+                                <img src="/img/ic_dados_protegidos.png" style="width: 30%; height: 30%">
+                            </div>
+                            <h5 class="center">Dados Protegidos</h5>
+
+                            <p class="light">Não enviamos nenhuma informação sem sua autorização</p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <div class="center">
+                                <img src="/img/ic_facilidade.png" style="width: 30%; height: 30%">
+                            </div>
+                            <h5 class="center">Facilidade</h5>
+
+                            <p class="light">Responda as questões em 1 minuto e em menos de 48 horas te enviaremos as melhores opções de profissionais</p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <div class="center">
+                                <img src="/img/ic_gratuito.png" style="width: 30%; height: 30%">
+                            </div>
+                            <h5 class="center">Gratuito</h5>
+
+                            <p class="light">Pesquise o quanto quiser sem pagar nada</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="grey lighten-4">
+            <div class="container">
+                <div class="section">
+                    <div class="col s12 center">
+                        <h5>Requisite um profissinal agora</h5>
+                    </div>
+                    {{>indicaForm}}
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="page-footer blue darken-4">
+            <!--<div class="container">-->
+                <!--<div class="row">-->
+                    <!--<div class="col l6 s12">-->
+                        <!--<h5 class="white-text">Company Bio</h5>-->
+                        <!--<p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>-->
+
+
+                    <!--</div>-->
+                    <!--<div class="col l3 s12">-->
+                        <!--<h5 class="white-text">Settings</h5>-->
+                        <!--<ul>-->
+                            <!--<li><a class="white-text" href="#!">Link 1</a></li>-->
+                            <!--<li><a class="white-text" href="#!">Link 2</a></li>-->
+                            <!--<li><a class="white-text" href="#!">Link 3</a></li>-->
+                            <!--<li><a class="white-text" href="#!">Link 4</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="col l3 s12">-->
+                        <!--<h5 class="white-text">Connect</h5>-->
+                        <!--<ul>-->
+                            <!--<li><a class="white-text" href="#!">Link 1</a></li>-->
+                            <!--<li><a class="white-text" href="#!">Link 2</a></li>-->
+                            <!--<li><a class="white-text" href="#!">Link 3</a></li>-->
+                            <!--<li><a class="white-text" href="#!">Link 4</a></li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="footer-copyright">
+                <div class="container">
+                            IndicaPsico - Todos os direitos reservados
+                    <a class="grey-text text-lighten-4 right" href="#!">contato@indicapsico.com.br</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</template>
+
+
+
+<template name="indicaForm">
+    <div class="row">
+        <form class="col s12" id="indicaForm">
+            <div class="row">
+                <div class="input-field col s12 l6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Suas informações são sigilosas e tratadas com muito cuidado. Seu nome só é informado aos profissionais selecionados por você.">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="name" type="text" class="validate">
+                    <label for="name">Nome</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" type="email" class="validate">
+                    <label for="email">E-mail</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone" type="text" class="validate">
+                    <label for="phone">Telefone de Contato</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix">store</i>
+                    <input id="address" type="text" class="validate">
+                    <label for="address">Endereço</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <select id="valores">
+                        <option value="" disabled selected>Valores</option>
+                        {{#each valores}}
+                            <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                    <label>Valores</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <select id="atendimentoType">
+                        <option value="" disabled selected>Escolha o tipo de atendimento</option>
+                        {{#each atendimentoTypes}}
+                            <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                    <label>Tipo de Atendimento</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <select id="especializacaoType">
+                        <option value="" disabled selected>Especialização (opcional)</option>
+                        {{#each especializacaoTypes}}
+                            <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                    <label>Tipo de Especialização</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <select id="abordagemType">
+                        <option value="" disabled selected>Abordagem Clínica (opcional)</option>
+                        {{#each abordagemTypes}}
+                            <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                    <label>Tipo de Abordagem Clínica</label>
+                </div>
+                <div class="input-field col s12 l6">
+                    <div class="row">
+                        <div class="col s2">
+                            Convênio:
+                        </div>
+                        <div class="col s2">
+                            <input name="convenioGroup" type="radio" id="convenioNao" value="convenioNao"/>
+                            <label for="convenioNao">Não</label>
+                        </div>
+                        <div class="col s2">
+                            <input name="convenioGroup" type="radio" id="convenioSim" value="convenioSim"/>
+                            <label for="convenioSim">Sim</label>
+                        </div>
+                        <div class="col s12">
+                            <div class="input-field">
+                                <input disabled id="nomeConvenio" type="text" class="validate">
+                                <label for="nomeConvenio">Nome do Convênio</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-field col s12 l6">
+                    <div class="row">
+                        <div class="col s2">
+                            Contato:
+                        </div>
+                        <div class="col s5">
+                            <input name="contato" type="radio" id="contatoNao" value="contatoNao" />
+                            <label for="contatoNao">Prefiro entrar em contato</label>
+                        </div>
+                        <div class="col s5">
+                            <input name="contato" type="radio" id="contatoSim" value="contatoSim" />
+                            <label for="contatoSim">Aceito receber contato</label>
+                        </div>
+                    </div>
+                    <div class="row" id="contatoForm">
+                        <div class="col s6">
+                            <div>Entrar em contato por:</div>
+                            <form>
+                                <p>
+                                    <input type="checkbox" id="contatoEmail" value="Email" name="tipoContato"/>
+                                    <label for="contatoEmail">E-mail</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="contatoWhatsapp" value="Whatsapp" name="tipoContato"/>
+                                    <label for="contatoWhatsapp">Whatsapp</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="contatoTelefone" value="Telefone" name="tipoContato"/>
+                                    <label for="contatoTelefone">Telefone</label>
+                                </p>
+                            </form>
+                        </div>
+                        <div class="col s6">
+                            <div>Horários para contato:</div>
+                            <form>
+                                <p>
+                                    <input type="checkbox" id="contatoManha" value="Manhã" name="periodoContato"/>
+                                    <label for="contatoManha">Manhã</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="contatoAlmoco" value="Almoço" name="periodoContato"/>
+                                    <label for="contatoAlmoco">Almoço</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="contatoTarde" value="Tarde" name="periodoContato"/>
+                                    <label for="contatoTarde">Tarde</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" id="contatoNoite" value="Noite" name="periodoContato"/>
+                                    <label for="contatoNoite">Noite</label>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l12 right-align">
+                    <button class="btn waves-effect waves-light blue darken-4" name="action" id="requisitaPsico">Enviar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>
+
+
+
+
