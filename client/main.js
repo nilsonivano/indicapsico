@@ -4,12 +4,14 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './main.html';
 
 Template.indicaPsicoHome.onRendered(function(){
-  $('.parallax').parallax();
-  $('select').material_select();
-  $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
-  });
+    $('.parallax').parallax();
+    $('select').material_select();
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+    $('#contatoForm').hide();
+    $('.scrollspy').scrollSpy();
 });
 
 Template.indicaForm.helpers({
@@ -152,10 +154,10 @@ Template.indicaForm.events({
               htmlIndicaPsico,
               function(err, results){
                 if(err){
-                  console.log(err)
+                  Materialize.toast('Sua requisição não foi enviada. Favor insira todas as informações obrigatórias.', 10000);
                 }
               });
-          Materialize.toast('Sua requisição foi enviada', 10000);
+          Materialize.toast('Sua requisição foi enviada com sucesso. Em breve retornaremos com o psicólogo mais indicado para suas necessidades.', 10000);
           $("#indicaForm").find('input:text, input:password, input:file, select, textarea').val('');
           $("#indicaForm").find('input:radio, input:checkbox').removeAttr('checked').removeAttr('selected');
         });

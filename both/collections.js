@@ -1,3 +1,5 @@
+import { Mongo } from 'meteor/mongo';
+
 psicoRequest = new Mongo.Collection('psicoRequest');
 
 psicoRequestSchema = new SimpleSchema({

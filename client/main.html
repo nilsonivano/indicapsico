@@ -26,13 +26,14 @@
             <div class="section no-pad-bot">
                 <div class="container">
                     <br><br>
-                    <h1 class="header center" style="color: #0088b9;">Indica Psico</h1>
+                    <h1 class="header center" style="color: #0088b9">IndicaPsico</h1>
                     <div class="row center">
                         <h5 class="header col s12 light">Encontre agora o melhor psicólogo para você!</h5>
+                        <a href="#indicaF" class="waves-effect waves-light btn-large" style="background-color: #0088b9">Buscar Profissionais</a>
                     </div>
                 </div>
             </div>
-            <div class="parallax"><img src="img/pexels-photo-109107.jpeg"></div>
+            <div class="parallax"><img src="img/indicaPsico_bg1.jpeg" style="width: 90%; height: auto"></div>
         </div>
 
 
@@ -59,7 +60,7 @@
                             </div>
                             <h5 class="center">Facilidade</h5>
 
-                            <p class="light">Responda as questões em 1 minuto e em menos de 48 horas te enviaremos as melhores opções de profissionais</p>
+                            <p class="light">Responda as questões em 1 minuto e enviaremos as melhores opções de profissionais</p>
                         </div>
                     </div>
 
@@ -82,7 +83,7 @@
             <div class="container">
                 <div class="section">
                     <div class="col s12 center">
-                        <h5>Requisite um profissinal agora</h5>
+                        <h5>Requisite um profissional agora</h5>
                     </div>
                     {{>indicaForm}}
                 </div>
@@ -90,39 +91,11 @@
         </div>
 
 
-        <footer class="page-footer blue darken-4">
-            <!--<div class="container">-->
-                <!--<div class="row">-->
-                    <!--<div class="col l6 s12">-->
-                        <!--<h5 class="white-text">Company Bio</h5>-->
-                        <!--<p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>-->
-
-
-                    <!--</div>-->
-                    <!--<div class="col l3 s12">-->
-                        <!--<h5 class="white-text">Settings</h5>-->
-                        <!--<ul>-->
-                            <!--<li><a class="white-text" href="#!">Link 1</a></li>-->
-                            <!--<li><a class="white-text" href="#!">Link 2</a></li>-->
-                            <!--<li><a class="white-text" href="#!">Link 3</a></li>-->
-                            <!--<li><a class="white-text" href="#!">Link 4</a></li>-->
-                        <!--</ul>-->
-                    <!--</div>-->
-                    <!--<div class="col l3 s12">-->
-                        <!--<h5 class="white-text">Connect</h5>-->
-                        <!--<ul>-->
-                            <!--<li><a class="white-text" href="#!">Link 1</a></li>-->
-                            <!--<li><a class="white-text" href="#!">Link 2</a></li>-->
-                            <!--<li><a class="white-text" href="#!">Link 3</a></li>-->
-                            <!--<li><a class="white-text" href="#!">Link 4</a></li>-->
-                        <!--</ul>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
+        <footer class="page-footer indicaPsicoBg">
             <div class="footer-copyright">
                 <div class="container">
                             IndicaPsico - Todos os direitos reservados
-                    <a class="grey-text text-lighten-4 right" href="#!">contato@indicapsico.com.br</a>
+                    <a class="grey-text text-lighten-4 right" href="mailto:contato@indicapsico.com.br" target="_top">contato@indicapsico.com.br</a>
                 </div>
             </div>
         </footer>
@@ -132,25 +105,25 @@
 
 
 <template name="indicaForm">
-    <div class="row">
+    <div class="row scrollspy" id="indicaF">
         <form class="col s12" id="indicaForm">
             <div class="row">
-                <div class="input-field col s12 l6 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Suas informações são sigilosas e tratadas com muito cuidado. Seu nome só é informado aos profissionais selecionados por você.">
+                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Suas informações são sigilosas e tratadas com muito cuidado. Seu nome só é informado aos profissionais selecionados por você.">
                     <i class="material-icons prefix">account_circle</i>
                     <input id="name" type="text" class="validate">
                     <label for="name">Nome</label>
                 </div>
-                <div class="input-field col s12 l6">
+                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Não se preocupe. Você não receberá uma enxurrada de emails indesejados. Nenhum contato direto é feito pelos profissionais até a sua autorização.">
                     <i class="material-icons prefix">email</i>
                     <input id="email" type="email" class="validate">
                     <label for="email">E-mail</label>
                 </div>
-                <div class="input-field col s12 l6">
+                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Qualquer uma das informações é válida. Fique tranquilo, você poderá escolher entre os profissionais mais próximos a você.">
                     <i class="material-icons prefix">phone</i>
                     <input id="phone" type="text" class="validate">
                     <label for="phone">Telefone de Contato</label>
                 </div>
-                <div class="input-field col s12 l6">
+                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Os profissionais não recebem seu telefone automaticamente. Como no caso do email, só dividimos essa informação após a sua autorização.">
                     <i class="material-icons prefix">store</i>
                     <input id="address" type="text" class="validate">
                     <label for="address">Endereço</label>
@@ -173,7 +146,7 @@
                     </select>
                     <label>Tipo de Atendimento</label>
                 </div>
-                <div class="input-field col s12 l6">
+                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Aqui estão algumas categorias caso você busque um profissional com experiência ou especialização em determinada área. Se você não sabe, não se preocupe, essa informação é opcional.">
                     <select id="especializacaoType">
                         <option value="" disabled selected>Especialização (opcional)</option>
                         {{#each especializacaoTypes}}
@@ -182,7 +155,7 @@
                     </select>
                     <label>Tipo de Especialização</label>
                 </div>
-                <div class="input-field col s12 l6">
+                <div class="input-field col s12 l6 tooltipped informationIcon" data-position="top" data-delay="50" data-tooltip="Em alguns casos pacientes já buscam determinada abordagem clínica do profissional.Essa informação também é opcional.">
                     <select id="abordagemType">
                         <option value="" disabled selected>Abordagem Clínica (opcional)</option>
                         {{#each abordagemTypes}}
@@ -218,7 +191,7 @@
                             Contato:
                         </div>
                         <div class="col s5">
-                            <input name="contato" type="radio" id="contatoNao" value="contatoNao" />
+                            <input checked name="contato" type="radio" id="contatoNao" value="contatoNao" />
                             <label for="contatoNao">Prefiro entrar em contato</label>
                         </div>
                         <div class="col s5">
@@ -268,7 +241,7 @@
                     </div>
                 </div>
                 <div class="col s12 l12 right-align">
-                    <button class="btn waves-effect waves-light blue darken-4" name="action" id="requisitaPsico">Enviar
+                    <button class="btn waves-effect waves-light indicaPsicoBg" name="action" id="requisitaPsico">Enviar
                     </button>
                 </div>
             </div>
