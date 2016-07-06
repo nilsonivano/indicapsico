@@ -29,7 +29,7 @@
                     <h1 class="header center" style="color: #0088b9">IndicaPsico</h1>
                     <div class="row center">
                         <h5 class="header col s12 light">Encontre agora o melhor psicólogo para você!</h5>
-                        <a href="#indicaF" class="waves-effect waves-light btn-large" style="background-color: #0088b9">Buscar Profissionais</a>
+                        <a href="#indicaF" class="waves-effect waves-light btn-large" id="buttonIndicaPsico" style="background-color: #0088b9">Buscar Profissionais</a>
                     </div>
                 </div>
             </div>
@@ -90,6 +90,15 @@
             </div>
         </div>
 
+        <div id="modalRequestPsicoSuccess" class="modal">
+            <div class="modal-content">
+                <p class="center-align">Olá, no momento estamos cadastrando os psicólogos e finalizando os testes na plataforma. Em breve estaremos no ar. Obrigado!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="" class=" modal-action modal-close waves-effect waves-green btn-flat" id="modalClose">OK</a>
+            </div>
+        </div>
+
 
         <footer class="page-footer indicaPsicoBg">
             <div class="footer-copyright">
@@ -99,6 +108,49 @@
                 </div>
             </div>
         </footer>
+        <!-- Google Code for Click no envia requisita psico Conversion Page
+    In your html page, add the snippet and call
+    goog_report_conversion when someone clicks on the
+    chosen link or button. -->
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            goog_snippet_vars = function() {
+                var w = window;
+                w.google_conversion_id = 972021336;
+                w.google_conversion_label = "6tSwCMLe8mcQ2Ly_zwM";
+                w.google_remarketing_only = false;
+            }
+            // DO NOT CHANGE THE CODE BELOW.
+            goog_report_conversion = function(url) {
+                goog_snippet_vars();
+                window.google_conversion_format = "3";
+                var opt = new Object();
+                opt.onload_callback = function() {
+                    if (typeof(url) != 'undefined') {
+                        window.location = url;
+                    }
+                }
+                var conv_handler = window['google_trackConversion'];
+                if (typeof(conv_handler) == 'function') {
+                    conv_handler(opt);
+                }
+            }
+            /* ]]> */
+        </script>
+        <script type="text/javascript"
+                src="//www.googleadservices.com/pagead/conversion_async.js">
+        </script>
+        <!-- Hotjar Tracking Code for http://www.indicapsico.com.br -->
+        <script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:245141,hjsv:5};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+        </script>
     </body>
 </template>
 
@@ -118,15 +170,15 @@
                     <input id="email" type="email" class="validate">
                     <label for="email">E-mail</label>
                 </div>
-                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Qualquer uma das informações é válida. Fique tranquilo, você poderá escolher entre os profissionais mais próximos a você.">
+                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Os profissionais não recebem seu telefone automaticamente. Como no caso do email, só dividimos essa informação após a sua autorização.">
                     <i class="material-icons prefix">phone</i>
                     <input id="phone" type="text" class="validate">
                     <label for="phone">Telefone de Contato</label>
                 </div>
-                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Os profissionais não recebem seu telefone automaticamente. Como no caso do email, só dividimos essa informação após a sua autorização.">
+                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Qualquer uma das informações é válida. Fique tranquilo, você poderá escolher entre os profissionais mais próximos a você.">
                     <i class="material-icons prefix">store</i>
                     <input id="address" type="text" class="validate">
-                    <label for="address">Endereço</label>
+                    <label for="address">Local do Atendimento (Bairro ou CEP)</label>
                 </div>
                 <div class="input-field col s12 l6">
                     <select id="valores">
@@ -190,11 +242,11 @@
                         <div class="col s2">
                             Contato:
                         </div>
-                        <div class="col s5">
+                        <div class="col s5 tooltipped" data-position="top" data-delay="50" data-tooltip="Aqui você decide como será feito o contato. Na opção “Prefiro entrar em contato” você recebe as informações dos profissionais para ligar quando achar melhor e na ordem que preferir. Já na opção “Aceito receber contato”, você autoriza o envio das suas informações e eferências de contato para os profissionais encontrados que entrarão em contato na sequência.">
                             <input checked name="contato" type="radio" id="contatoNao" value="contatoNao" />
                             <label for="contatoNao">Prefiro entrar em contato</label>
                         </div>
-                        <div class="col s5">
+                        <div class="col s5 tooltipped" data-position="top" data-delay="50" data-tooltip="Aqui você decide como será feito o contato. Na opção “Prefiro entrar em contato” você recebe as informações dos profissionais para ligar quando achar melhor e na ordem que preferir. Já na opção “Aceito receber contato”, você autoriza o envio das suas informações e eferências de contato para os profissionais encontrados que entrarão em contato na sequência.">
                             <input name="contato" type="radio" id="contatoSim" value="contatoSim" />
                             <label for="contatoSim">Aceito receber contato</label>
                         </div>
@@ -241,7 +293,7 @@
                     </div>
                 </div>
                 <div class="col s12 l12 right-align">
-                    <button class="btn waves-effect waves-light indicaPsicoBg" name="action" id="requisitaPsico">Enviar
+                    <button onclick="goog_report_conversion" class="btn waves-effect waves-light indicaPsicoBg" name="action" id="requisitaPsico">Enviar
                     </button>
                 </div>
             </div>
