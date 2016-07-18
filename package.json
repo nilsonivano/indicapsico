@@ -7,6 +7,15 @@
   "dependencies": {
     "jquery": "^3.0.0",
     "materialize-css": "^0.97.6",
-    "meteor-node-stubs": "~0.2.0"
-  }
+    "mdi": "^1.6.50",
+    "meteor-node-stubs": "~0.2.0",
+    "node-geocoder": "^3.13.0",
+    "node-regexp": "^0.1.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

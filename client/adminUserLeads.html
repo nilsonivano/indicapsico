@@ -1,0 +1,46 @@
+<template name="adminUserLeads">
+    {{#if currentUser}}
+    <head>
+        <title>IndicaPsico</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h4>Indica Psico Leads</h4>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="mapUserLeads">
+                    {{> googleMap name="mapUserLeads" options=mapUserLeads}}
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="row">
+                <table class="striped centered">
+                    <thead>
+                    <tr>
+                        <th data-field="id">Nome</th>
+                        <th data-field="name">email</th>
+                        <th data-field="price">Local de atendimento</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {{#each user in userLeads}}
+                    <tr>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.address}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+    {{/if}}
+</template>

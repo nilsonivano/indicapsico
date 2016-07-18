@@ -4,15 +4,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion_async.js" charset="utf-8"></script>
     </head>
 
     <body>
-        <nav class="white" role="navigation">
+    <nav class="white" role="navigation">
         <div class="nav-wrapper container">
             <a id="logo-container" href="#" class="brand-logo center"><img src="img/logo_indicapsico.png"
-                                                                    style="width: 40px;height: auto"></a>
+                                                                           style="width: 40px;height: auto"></a>
             <ul class="right hide-on-med-and-down">
-            <!--<li><a href="#">Navbar Link</a></li>-->
+                <!--<li><a href="#">Navbar Link</a></li>-->
             </ul>
 
             <!--<ul id="nav-mobile" class="side-nav">-->
@@ -20,162 +21,172 @@
             <!--</ul>-->
             <!--<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>-->
         </div>
-        </nav>
+    </nav>
 
-        <div id="index-banner" class="parallax-container">
-            <div class="section no-pad-bot">
-                <div class="container">
-                    <br><br>
-                    <h1 class="header center" style="color: #0088b9">IndicaPsico</h1>
-                    <div class="row center">
-                        <h5 class="header col s12 light">Encontre agora o melhor psicólogo para você!</h5>
-                        <a href="#indicaF" class="waves-effect waves-light btn-large" id="buttonIndicaPsico" style="background-color: #0088b9">Buscar Profissionais</a>
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center" style="color: #0088b9">IndicaPsico</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">Encontre agora o melhor psicólogo para você!</h5>
+                    <a href="#indicaF" class="waves-effect waves-light btn-large" id="buttonIndicaPsico"
+                       style="background-color: #0088b9">Buscar Profissionais</a>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="img/indicaPsico_bg1.jpeg" style="width: 90%; height: auto"></div>
+    </div>
+
+
+    <div class="container">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <div class="center">
+                            <img src="/img/ic_dados_protegidos.png" style="width: 30%; height: 30%">
+                        </div>
+                        <h5 class="center">Dados Protegidos</h5>
+
+                        <p class="light">Não enviamos nenhuma informação sem sua autorização</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <div class="center">
+                            <img src="/img/ic_facilidade.png" style="width: 30%; height: 30%">
+                        </div>
+                        <h5 class="center">Facilidade</h5>
+
+                        <p class="light">Responda as questões em 1 minuto e enviaremos as melhores opções de
+                            profissionais</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <div class="center">
+                            <img src="/img/ic_gratuito.png" style="width: 30%; height: 30%">
+                        </div>
+                        <h5 class="center">Gratuito</h5>
+
+                        <p class="light">Pesquise o quanto quiser sem pagar nada</p>
                     </div>
                 </div>
             </div>
-            <div class="parallax"><img src="img/indicaPsico_bg1.jpeg" style="width: 90%; height: auto"></div>
+
         </div>
+    </div>
 
-
+    <div class="grey lighten-4">
         <div class="container">
             <div class="section">
-
-                <!--   Icon Section   -->
-                <div class="row">
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <div class="center">
-                                <img src="/img/ic_dados_protegidos.png" style="width: 30%; height: 30%">
-                            </div>
-                            <h5 class="center">Dados Protegidos</h5>
-
-                            <p class="light">Não enviamos nenhuma informação sem sua autorização</p>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <div class="center">
-                                <img src="/img/ic_facilidade.png" style="width: 30%; height: 30%">
-                            </div>
-                            <h5 class="center">Facilidade</h5>
-
-                            <p class="light">Responda as questões em 1 minuto e enviaremos as melhores opções de profissionais</p>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <div class="center">
-                                <img src="/img/ic_gratuito.png" style="width: 30%; height: 30%">
-                            </div>
-                            <h5 class="center">Gratuito</h5>
-
-                            <p class="light">Pesquise o quanto quiser sem pagar nada</p>
-                        </div>
-                    </div>
+                <div class="col s12 center">
+                    <h5>Requisite um profissional agora</h5>
                 </div>
-
+                {{>indicaForm}}
             </div>
         </div>
+    </div>
 
-        <div class="grey lighten-4">
+    <div id="modalRequestPsicoSuccess" class="modal">
+        <div class="modal-content">
+            <p class="center-align">Olá, no momento estamos cadastrando os psicólogos e finalizando os testes na
+                plataforma. Em breve estaremos no ar. Obrigado!</p>
+        </div>
+        <div class="modal-footer">
+            <a href="" class=" modal-action modal-close waves-effect waves-green btn-flat" id="modalClose">OK</a>
+        </div>
+    </div>
+
+
+    <footer class="page-footer indicaPsicoBg">
+        <div class="footer-copyright">
             <div class="container">
-                <div class="section">
-                    <div class="col s12 center">
-                        <h5>Requisite um profissional agora</h5>
-                    </div>
-                    {{>indicaForm}}
-                </div>
+                IndicaPsico - Todos os direitos reservados
+                <a class="grey-text text-lighten-4 right" href="mailto:contato@indicapsico.com.br" target="_top">contato@indicapsico.com.br</a>
             </div>
         </div>
-
-        <div id="modalRequestPsicoSuccess" class="modal">
-            <div class="modal-content">
-                <p class="center-align">Olá, no momento estamos cadastrando os psicólogos e finalizando os testes na plataforma. Em breve estaremos no ar. Obrigado!</p>
-            </div>
-            <div class="modal-footer">
-                <a href="" class=" modal-action modal-close waves-effect waves-green btn-flat" id="modalClose">OK</a>
-            </div>
-        </div>
-
-
-        <footer class="page-footer indicaPsicoBg">
-            <div class="footer-copyright">
-                <div class="container">
-                            IndicaPsico - Todos os direitos reservados
-                    <a class="grey-text text-lighten-4 right" href="mailto:contato@indicapsico.com.br" target="_top">contato@indicapsico.com.br</a>
-                </div>
-            </div>
-        </footer>
-        <!-- Google Code for Click no envia requisita psico Conversion Page
-    In your html page, add the snippet and call
-    goog_report_conversion when someone clicks on the
-    chosen link or button. -->
-        <script type="text/javascript">
-            /* <![CDATA[ */
-            goog_snippet_vars = function() {
-                var w = window;
-                w.google_conversion_id = 972021336;
-                w.google_conversion_label = "6tSwCMLe8mcQ2Ly_zwM";
-                w.google_remarketing_only = false;
-            }
-            // DO NOT CHANGE THE CODE BELOW.
-            goog_report_conversion = function(url) {
-                goog_snippet_vars();
-                window.google_conversion_format = "3";
-                var opt = new Object();
-                opt.onload_callback = function() {
-                    if (typeof(url) != 'undefined') {
-                        window.location = url;
-                    }
-                }
-                var conv_handler = window['google_trackConversion'];
-                if (typeof(conv_handler) == 'function') {
-                    conv_handler(opt);
+    </footer>
+    <!-- Hotjar Tracking Code for http://www.indicapsico.com.br -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () {
+                        (h.hj.q = h.hj.q || []).push(arguments)
+                    };
+            h._hjSettings = {hjid: 245141, hjsv: 5};
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+    <!-- Google Code for Click no envia requisita psico Conversion Page
+In your html page, add the snippet and call
+goog_report_conversion when someone clicks on the
+chosen link or button. -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        goog_snippet_vars = function() {
+            var w = window;
+            w.google_conversion_id = 972021336;
+            w.google_conversion_label = "6tSwCMLe8mcQ2Ly_zwM";
+            w.google_remarketing_only = false;
+        }
+        // DO NOT CHANGE THE CODE BELOW.
+        goog_report_conversion = function(url) {
+            goog_snippet_vars();
+            window.google_conversion_format = "3";
+            var opt = new Object();
+            opt.onload_callback = function() {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
                 }
             }
-            /* ]]> */
-        </script>
-        <script type="text/javascript"
-                src="//www.googleadservices.com/pagead/conversion_async.js">
-        </script>
-        <!-- Hotjar Tracking Code for http://www.indicapsico.com.br -->
-        <script>
-            (function(h,o,t,j,a,r){
-                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                h._hjSettings={hjid:245141,hjsv:5};
-                a=o.getElementsByTagName('head')[0];
-                r=o.createElement('script');r.async=1;
-                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                a.appendChild(r);
-            })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-        </script>
+            var conv_handler = window['google_trackConversion'];
+            if (typeof(conv_handler) == 'function') {
+                conv_handler(opt);
+            }
+        }
+        /* ]]> */
+    </script>
+    <script type="text/javascript"
+            src="//www.googleadservices.com/pagead/conversion_async.js">
+    </script>
+
+
     </body>
 </template>
-
-
 
 <template name="indicaForm">
     <div class="row scrollspy" id="indicaF">
         <form class="col s12" id="indicaForm">
             <div class="row">
-                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Suas informações são sigilosas e tratadas com muito cuidado. Seu nome só é informado aos profissionais selecionados por você.">
+                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50"
+                     data-tooltip="Suas informações são sigilosas e tratadas com muito cuidado. Seu nome só é informado aos profissionais selecionados por você.">
                     <i class="material-icons prefix">account_circle</i>
                     <input id="name" type="text" class="validate">
                     <label for="name">Nome</label>
                 </div>
-                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Não se preocupe. Você não receberá uma enxurrada de emails indesejados. Nenhum contato direto é feito pelos profissionais até a sua autorização.">
+                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50"
+                     data-tooltip="Não se preocupe. Você não receberá uma enxurrada de emails indesejados. Nenhum contato direto é feito pelos profissionais até a sua autorização.">
                     <i class="material-icons prefix">email</i>
                     <input id="email" type="email" class="validate">
                     <label for="email">E-mail</label>
                 </div>
-                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Os profissionais não recebem seu telefone automaticamente. Como no caso do email, só dividimos essa informação após a sua autorização.">
+                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50"
+                     data-tooltip="Os profissionais não recebem seu telefone automaticamente. Como no caso do email, só dividimos essa informação após a sua autorização.">
                     <i class="material-icons prefix">phone</i>
                     <input id="phone" type="text" class="validate">
                     <label for="phone">Telefone de Contato</label>
                 </div>
-                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Qualquer uma das informações é válida. Fique tranquilo, você poderá escolher entre os profissionais mais próximos a você.">
+                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50"
+                     data-tooltip="Qualquer uma das informações é válida. Fique tranquilo, você poderá escolher entre os profissionais mais próximos a você.">
                     <i class="material-icons prefix">store</i>
                     <input id="address" type="text" class="validate">
                     <label for="address">Local do Atendimento (Bairro ou CEP)</label>
@@ -198,7 +209,8 @@
                     </select>
                     <label>Tipo de Atendimento</label>
                 </div>
-                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50" data-tooltip="Aqui estão algumas categorias caso você busque um profissional com experiência ou especialização em determinada área. Se você não sabe, não se preocupe, essa informação é opcional.">
+                <div class="input-field col s12 l6 tooltipped" data-position="top" data-delay="50"
+                     data-tooltip="Aqui estão algumas categorias caso você busque um profissional com experiência ou especialização em determinada área. Se você não sabe, não se preocupe, essa informação é opcional.">
                     <select id="especializacaoType">
                         <option value="" disabled selected>Especialização (opcional)</option>
                         {{#each especializacaoTypes}}
@@ -207,7 +219,8 @@
                     </select>
                     <label>Tipo de Especialização</label>
                 </div>
-                <div class="input-field col s12 l6 tooltipped informationIcon" data-position="top" data-delay="50" data-tooltip="Em alguns casos pacientes já buscam determinada abordagem clínica do profissional.Essa informação também é opcional.">
+                <div class="input-field col s12 l6 tooltipped informationIcon" data-position="top" data-delay="50"
+                     data-tooltip="Em alguns casos pacientes já buscam determinada abordagem clínica do profissional.Essa informação também é opcional.">
                     <select id="abordagemType">
                         <option value="" disabled selected>Abordagem Clínica (opcional)</option>
                         {{#each abordagemTypes}}
@@ -221,15 +234,15 @@
                         <div class="col s2">
                             Convênio:
                         </div>
-                        <div class="col s2">
+                        <div class="col s5">
                             <input name="convenioGroup" type="radio" id="convenioNao" value="convenioNao"/>
                             <label for="convenioNao">Não</label>
                         </div>
-                        <div class="col s2">
+                        <div class="col s5">
                             <input name="convenioGroup" type="radio" id="convenioSim" value="convenioSim"/>
                             <label for="convenioSim">Sim</label>
                         </div>
-                        <div class="col s12">
+                        <div class="col s12" style="margin-top: 5px">
                             <div class="input-field">
                                 <input disabled id="nomeConvenio" type="text" class="validate">
                                 <label for="nomeConvenio">Nome do Convênio</label>
@@ -242,12 +255,14 @@
                         <div class="col s2">
                             Contato:
                         </div>
-                        <div class="col s5 tooltipped" data-position="top" data-delay="50" data-tooltip="Aqui você decide como será feito o contato. Na opção “Prefiro entrar em contato” você recebe as informações dos profissionais para ligar quando achar melhor e na ordem que preferir. Já na opção “Aceito receber contato”, você autoriza o envio das suas informações e eferências de contato para os profissionais encontrados que entrarão em contato na sequência.">
-                            <input checked name="contato" type="radio" id="contatoNao" value="contatoNao" />
+                        <div class="col s5 tooltipped" data-position="top" data-delay="50"
+                             data-tooltip="Aqui você decide como será feito o contato. Na opção “Prefiro entrar em contato” você recebe as informações dos profissionais para ligar quando achar melhor e na ordem que preferir. Já na opção “Aceito receber contato”, você autoriza o envio das suas informações e eferências de contato para os profissionais encontrados que entrarão em contato na sequência.">
+                            <input checked name="contato" type="radio" id="contatoNao" value="contatoNao"/>
                             <label for="contatoNao">Prefiro entrar em contato</label>
                         </div>
-                        <div class="col s5 tooltipped" data-position="top" data-delay="50" data-tooltip="Aqui você decide como será feito o contato. Na opção “Prefiro entrar em contato” você recebe as informações dos profissionais para ligar quando achar melhor e na ordem que preferir. Já na opção “Aceito receber contato”, você autoriza o envio das suas informações e eferências de contato para os profissionais encontrados que entrarão em contato na sequência.">
-                            <input name="contato" type="radio" id="contatoSim" value="contatoSim" />
+                        <div class="col s5 tooltipped" data-position="top" data-delay="50"
+                             data-tooltip="Aqui você decide como será feito o contato. Na opção “Prefiro entrar em contato” você recebe as informações dos profissionais para ligar quando achar melhor e na ordem que preferir. Já na opção “Aceito receber contato”, você autoriza o envio das suas informações e eferências de contato para os profissionais encontrados que entrarão em contato na sequência.">
+                            <input name="contato" type="radio" id="contatoSim" value="contatoSim"/>
                             <label for="contatoSim">Aceito receber contato</label>
                         </div>
                     </div>
@@ -293,7 +308,8 @@
                     </div>
                 </div>
                 <div class="col s12 l12 right-align">
-                    <button onclick="goog_report_conversion" class="btn waves-effect waves-light indicaPsicoBg" name="action" id="requisitaPsico">Enviar
+                    <button onclick="goog_report_conversion" class="btn waves-effect waves-light indicaPsicoBg"
+                            name="action" id="requisitaPsico">Enviar
                     </button>
                 </div>
             </div>
@@ -301,6 +317,50 @@
     </div>
 </template>
 
+<template name="confirmSubmitForm">
+    <head>
+        <title>IndicaPsico</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion_async.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row" style="padding: 20px">
+                <div class="col s12 center-align">
+                    <h2 class="header center" style="color: #0088b9">IndicaPsico</h2>
+                    <img src="/img/logo_indicapsico.png" style="width: 70px;height: auto">
+                </div>
+                <div class="col s12 center">
+                    <h5>
+                        Olá, obrigado por utilizar nosso serviço. <br>
+                        No momento estamos cadastrando os psicólogos e finalizando os testes na
+                        plataforma. Em breve estaremos no ar. Obrigado!
+                    </h5>
+                </div>
+            </div>
+        </div>
+         <!--Google Code for Form Submit IndicaPsico Conversion Page-->
+        <!--<script type="text/javascript">-->
+            <!--/* <![CDATA[ */-->
+            <!--var google_conversion_id = 972021336;-->
+            <!--var google_conversion_language = "en";-->
+            <!--var google_conversion_format = "3";-->
+            <!--var google_conversion_color = "ffffff";-->
+            <!--var google_conversion_label = "gkR8CKCSlGgQ2Ly_zwM";-->
+            <!--var google_remarketing_only = false;-->
+            <!--/* ]]> */-->
+        <!--</script>-->
+        <!--<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">-->
+        <!--</script>-->
+        <!--<noscript>-->
+            <!--<div style="display:inline;">-->
+                <!--<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/972021336/?label=gkR8CKCSlGgQ2Ly_zwM&amp;guid=ON&amp;script=0"/>-->
+            <!--</div>-->
+        <!--</noscript>-->
+    </body>
+</template>
 
 
 

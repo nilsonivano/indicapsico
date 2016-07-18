@@ -3,6 +3,34 @@ Router.route('/', {
     template: 'indicaPsicoHome'
 });
 
+Router.route('/confirmSubmitForm', {
+    name: 'confirmSubmitForm',
+    template: 'confirmSubmitForm'
+});
+
+Router.route('/userLeads', {
+    name: 'adminUserLeads',
+    template: 'adminUserLeads',
+    subscriptions: function() {
+        if(Meteor.user()){
+            return (Meteor.subscribe('userLeadsAll'),
+            Meteor.subscribe('psicoDatabaseAll'));
+        }
+    },
+    action: function () {
+        if (this.ready()) {
+            this.render();
+        } else {
+            this.render('loading');
+        }
+    }
+});
+
+Router.route('/psicoPanel', {
+    name: 'adminPsicoPanel',
+    template: 'adminPsicoPanel'
+});
+
 if(Meteor.isClient){
     Router.plugin('seo',
         {

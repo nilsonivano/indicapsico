@@ -1,0 +1,49 @@
+<template name="adminPsicoPanel">
+    {{#if currentUser}}
+        <head>
+            <title>IndicaPsico</title>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        </head>
+        <body>
+        <div class="container">
+            <p>Inserir psicos (csv):</p>
+            <form action="#">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>File</span>
+                        <input type="file" name="uploadCSV">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="container">
+            <div class="row">
+                <table class="striped centered">
+                    <thead>
+                    <tr>
+                        <th data-field="id">Nome</th>
+                        <th data-field="name">CRP</th>
+                        <th data-field="price">address</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    {{#each user in csvresults}}
+                        <tr>
+                            <td>{{user.name}}</td>
+                            <td>{{user.crp}}</td>
+                            <td>{{user.address}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </body>
+    {{/if}}
+</template>

@@ -1,6 +1,65 @@
 import { Mongo } from 'meteor/mongo';
 
 psicoRequest = new Mongo.Collection('psicoRequest');
+psicoDatabase = new Mongo.Collection('psicoDatabase');
+
+contactsSchema = new SimpleSchema({
+    email: {
+        type: String,
+        optional: true,
+        defaultValue: ""
+    },
+    phone: {
+        type: String,
+        optional: true,
+        defaultValue: ""
+    },
+    facebook: {
+        type: String,
+        optional: true,
+        defaultValue: ""
+    },
+    instagram: {
+        type: String,
+        optional: true,
+        defaultValue: ""
+    },
+    twitter: {
+        type: String,
+        optional: true,
+        defaultValue: ""
+    },
+    website: {
+        type: String,
+        optional: true,
+        defaultValue: ""
+    }
+});
+
+addressGeocodeSchema = new SimpleSchema({
+    lat:{
+        type: Number,
+        decimal: true,
+        optional: true
+    },
+    lng:{
+        type: Number,
+        decimal: true,
+        optional: true
+    },
+    address:{
+        type: String,
+        optional: true
+    },
+    zipcode:{
+        type: String,
+        optional: true
+    },
+    city:{
+        type: String,
+        optional: true
+    }
+});
 
 psicoRequestSchema = new SimpleSchema({
     name: {
@@ -15,17 +74,26 @@ psicoRequestSchema = new SimpleSchema({
     },
     address: {
         type: String,
-        label: "User Address"
+        label: "User Address",
+        optional: true
+    },
+    addressGeocode:{
+        type: addressGeocodeSchema,
+        label: "Geocoded Address",
+        optional: true
     },
     phone:{
         type: String,
-        label: "User Phone"
+        label: "User Phone",
+        optional: true
     },
     valoresRange: {
-        type: String
+        type: String,
+        optional: true
     },
     atendimentoType:{
-        type: String
+        type: String,
+        optional: true
     },
     especializacaoType:{
         type: String,
@@ -67,5 +135,41 @@ psicoRequestSchema = new SimpleSchema({
     }
 });
 
+psicoSchema = new SimpleSchema({
+    name:{
+        type: String,
+        optional: true
+    },
+    crp: {
+        type: String,
+        optional: true
+    },
+    servicoType: {
+        type: String,
+        optional: true
+    },
+    abordagemType: {
+        type: String,
+        optional: true
+    },
+    addressGeocode:{
+        type: addressGeocodeSchema,
+        optional: true
+    },
+    contacts: {
+        type: contactsSchema,
+        optional: true
+    },
+    description: {
+        type: String,
+        optional: true
+    },
+    convenio: {
+        type: String,
+        optional: true
+    }
+})
+
 psicoRequest.attachSchema(psicoRequestSchema);
+psicoDatabase.attachSchema(psicoSchema);
 
