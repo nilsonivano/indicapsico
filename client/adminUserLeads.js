@@ -13,7 +13,7 @@ Template.adminUserLeads.onRendered(function(){
         var psicoList = psicoDatabase.find().fetch();
         var iconLeads ='/img/markerIndicaPsicoLead.png';
         var iconPsico ='/img/markerIndicaPsico20.png';
-        placeMarkerLead(userLeads,map,iconLeads);
+        placeMarkerLead(userLeads,map,iconLeads, psicoList);
         placeMarkerPsico(psicoList,map,iconPsico);
     });
 })
@@ -22,7 +22,12 @@ Template.adminUserLeads.helpers({
     userLeads: function () {
         return psicoRequest.find();
     },
-
+    leadCount: function () {
+        return psicoRequest.find().count();
+    },
+    psicoCount: function () {
+        return psicoDatabase.find().count();
+    },
     mapUserLeads: function() {
         // Make sure the maps API has loaded
         if (GoogleMaps.loaded()) {
@@ -32,5 +37,8 @@ Template.adminUserLeads.helpers({
                 zoom: 8
             };
         }
+    },
+    userNearPsicosInfo: function () {
+        return Session.get('userNearPsicosInfo')
     }
 })
