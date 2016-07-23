@@ -30,7 +30,7 @@
             {{#if userNearPsicosInfo}}
                 {{#each psico in userNearPsicosInfo}}
                     <div class="col s4">
-                        <div class="card-panel">
+                        <div class="card-panel" style="height: 450px; overflow: scroll">
                             <p>Nome: {{psico.name}}</p>
                             <p>Endereço: {{psico.addressGeocode.address}}</p>
                             <p>Distância: {{psico.distance}} km</p>
