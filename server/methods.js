@@ -3,7 +3,7 @@ import { Mongo } from 'meteor/mongo';
 
 Meteor.methods({
     'insertRequestPsico': function(name, email, phone, address, addressGeocode, valores, atendimentoType, especializacaoType, abordagemType,
-    haveConvenio, nomeConvenio, haveContatar, contatoList, periodoList){
+    haveConvenio, nomeConvenio, haveContatar, contatoList, periodoList, discountCode){
         psicoRequest.insert({
             name: name,
             email: email,
@@ -24,7 +24,8 @@ Meteor.methods({
             convenioName: nomeConvenio,
             haveContatar: haveContatar,
             contatoHorario: periodoList,
-            contatoType: contatoList
+            contatoType: contatoList,
+            discountCode: discountCode
         });
     },
     'getGeocodeFromAddress': function(address){

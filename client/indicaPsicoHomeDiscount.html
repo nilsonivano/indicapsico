@@ -1,0 +1,174 @@
+<template name="indicaPsicoHomeDiscount">
+    <head>
+        <title>IndicaPsico</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion_async.js"
+                charset="utf-8"></script>
+    </head>
+
+    <body>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo center"><img src="img/logo_indicapsico.png"
+                                                                           style="width: 40px;height: auto"></a>
+            <ul class="right hide-on-med-and-down">
+                <!--<li><a href="#">Navbar Link</a></li>-->
+            </ul>
+
+            <!--<ul id="nav-mobile" class="side-nav">-->
+            <!--<li><a href="#">Navbar Link</a></li>-->
+            <!--</ul>-->
+            <!--<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>-->
+        </div>
+    </nav>
+
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center" style="color: #0088b9">IndicaPsico</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">Encontre agora o melhor psicólogo para você!</h5>
+                    <a href="#indicaF" class="waves-effect waves-light btn-large" id="buttonIndicaPsico"
+                       style="background-color: #0088b9">Buscar Profissionais</a>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="img/indicaPsico_bg1.jpeg" style="width: 90%; height: auto"></div>
+    </div>
+
+    <div class="row grey center lighten-5 valign-wrapper" style="padding: 30px; margin-top: 0px">
+        <div class="col s12 m4 valign">
+            <img src="img/50discount.png" style="height: 120px;width: auto">
+        </div>
+        <div class="col s12 m8 valign">
+            <h5>Requisite um psicólogo hoje pelo IndicaPsico e ganhe 50% de desconto em sua primeira consulta</h5>
+            <p>*Você receberá um código promocional em seu email ao final do cadastro</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <div class="center">
+                            <img src="/img/ic_dados_protegidos.png" style="width: 30%; height: 30%">
+                        </div>
+                        <h5 class="center">Dados Protegidos</h5>
+
+                        <p class="light">Não enviamos nenhuma informação sem sua autorização</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <div class="center">
+                            <img src="/img/ic_facilidade.png" style="width: 30%; height: 30%">
+                        </div>
+                        <h5 class="center">Facilidade</h5>
+
+                        <p class="light">Responda as questões em 1 minuto e enviaremos as melhores opções de
+                            profissionais</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <div class="center">
+                            <img src="/img/ic_gratuito.png" style="width: 30%; height: 30%">
+                        </div>
+                        <h5 class="center">Gratuito</h5>
+                        <p class="light">Pesquise o quanto quiser sem pagar nada</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="grey lighten-4">
+        <div class="container">
+            <div class="section">
+                <div class="col s12 center">
+                    <h5>Requisite um profissional agora</h5>
+                </div>
+                {{>indicaForm}}
+            </div>
+        </div>
+    </div>
+
+    <div id="modalRequestPsicoSuccess" class="modal">
+        <div class="modal-content">
+            <p class="center-align">Olá, no momento estamos cadastrando os psicólogos e finalizando os testes na
+                plataforma. Em breve estaremos no ar. Obrigado!</p>
+        </div>
+        <div class="modal-footer">
+            <a href="" class=" modal-action modal-close waves-effect waves-green btn-flat" id="modalClose">OK</a>
+        </div>
+    </div>
+
+
+    <footer class="page-footer indicaPsicoBg">
+        <div class="footer-copyright">
+            <div class="container">
+                IndicaPsico - Todos os direitos reservados
+                <a class="grey-text text-lighten-4 right" href="mailto:contato@indicapsico.com.br" target="_top">contato@indicapsico.com.br</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Hotjar Tracking Code for http://www.indicapsico.com.br -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () {
+                        (h.hj.q = h.hj.q || []).push(arguments)
+                    };
+            h._hjSettings = {hjid: 245141, hjsv: 5};
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+    <!-- Google Code for Click no envia requisita psico Conversion Page
+In your html page, add the snippet and call
+goog_report_conversion when someone clicks on the
+chosen link or button. -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        goog_snippet_vars = function () {
+            var w = window;
+            w.google_conversion_id = 972021336;
+            w.google_conversion_label = "6tSwCMLe8mcQ2Ly_zwM";
+            w.google_remarketing_only = false;
+        }
+        // DO NOT CHANGE THE CODE BELOW.
+        goog_report_conversion = function (url) {
+            goog_snippet_vars();
+            window.google_conversion_format = "3";
+            var opt = new Object();
+            opt.onload_callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            }
+            var conv_handler = window['google_trackConversion'];
+            if (typeof(conv_handler) == 'function') {
+                conv_handler(opt);
+            }
+        }
+        /* ]]> */
+    </script>
+    <script type="text/javascript"
+            src="//www.googleadservices.com/pagead/conversion_async.js">
+    </script>
+
+
+    </body>
+</template>
+

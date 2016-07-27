@@ -3,25 +3,6 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import './main.html';
 
-Meteor.startup(function () {
-    $(window).scroll(function () {
-        windowPosition = $(window).scrollTop() + $(window).height();
-        perc = windowPosition / $(document).height() * 100;
-        if (perc > 25 && perc < 50) {
-            Session.set("scrollPercentage", 25);
-        }
-        if (perc > 50 && perc < 75) {
-            Session.set("scrollPercentage", 50);
-        }
-        if (perc > 75 && perc < 99) {
-            Session.set("scrollPercentage", 75);
-        }
-        if (perc > 99) {
-            Session.set("scrollPercentage", 100);
-        }
-    });
-});
-
 Template.indicaPsicoHome.onRendered(function () {
     $('.parallax').parallax();
     $('select').material_select();
@@ -147,8 +128,15 @@ Template.indicaForm.events({
                         zipcode: res[0].zipcode,
                         address: res[0].formattedAddress,
                     };
+
+                    var path = Router.current().route.path();
+                    var discountCode = "";
+                    if (path = "/discount"){
+                        var random = Math.random().toString(36).substring(7);
+                        discountCode = 'IP'+ random;
+                    }
                     Meteor.call('insertRequestPsico', name, email, phone, address, addressGeocode, valores, atendimentoType, especializacaoType, abordagemType,
-                        haveConvenio, nomeConvenio, haveContatar, contatoList, periodoList, function (err, results) {
+                        haveConvenio, nomeConvenio, haveContatar, contatoList, periodoList, discountCode, function (err, results) {
                             if (err) {
                                 console.log(err)
                             } else {
@@ -163,25 +151,48 @@ Template.indicaForm.events({
                                     haveContatar = "Não"
                                 }
                                 //Sending emails
-                                var html =
-                                    '<div>' + 'Olá ' + name + ', sua proposta foi enviada ao IndicaPsico' +
-                                    ' Pedimos agora que aguarde o nosso contato com a sugestão de psicólogos conforme sua necessidade. Abaixo você pode revisar as informações que você enviou:' + '</div>' +
-                                    '</br>' +
-                                    '<div>' + '<b>Nome: </b>' + name + '</div>' +
-                                    '<div>' + '<b>Email: </b>' + email + '</div>' +
-                                    '<div>' + '<b>Telefone: </b>' + phone + '<div>' +
-                                    '<div>' + '<b>Endereço: </b>' + address + '<div>' +
-                                    '<div>' + '<b>Valor: </b>' + valores + '<div>' +
-                                    '<div>' + '<b>Tipo de atendimento: </b>' + atendimentoType + '<div>' +
-                                    '<div>' + '<b>Tipo de especialização: </b>' + especializacaoType + '<div>' +
-                                    '<div>' + '<b>Tipo de abordagem: </b>' + abordagemType + '<div>' +
-                                    '<div>' + '<b>Convênio: </b>' + haveConvenio + '<div>' +
-                                    '<div>' + '<b>Nome do Convênio: </b>' + nomeConvenio + '<div>' +
-                                    '<div>' + '<b>Contatar: </b>' + haveContatar + '<div>' +
-                                    '<div>' + '<b>Tipo de Contato: </b>' + contatoList + '<div>' +
-                                    '<div>' + '<b>Período de Contato: </b>' + periodoList + '<div>' +
-                                    '</br>' +
-                                    '<div>' + 'Obrigado por utilizar o IndicaPsico (www.indicapsico.com.br)' + '</div>';
+                                if(discountCode.length > 1){
+                                    var html =
+                                        '<div>' + 'Olá ' + name + ', sua proposta foi enviada ao IndicaPsico. ' +
+                                        'Seu código para utilizar os 50% de desconto em sua primeira consulta é ' + '<b>' + discountCode + '</b>' + '. Utilize este código em sua primeira consulta com o profissional que iremos indicar. ' +
+                                        ' Pedimos agora que aguarde o nosso contato com a sugestão de psicólogos conforme sua necessidade. Abaixo você pode revisar as informações que você enviou:' + '</div>' +
+                                        '</br>' +
+                                        '<div>' + '<b>Nome: </b>' + name + '</div>' +
+                                        '<div>' + '<b>Email: </b>' + email + '</div>' +
+                                        '<div>' + '<b>Telefone: </b>' + phone + '<div>' +
+                                        '<div>' + '<b>Endereço: </b>' + address + '<div>' +
+                                        '<div>' + '<b>Valor: </b>' + valores + '<div>' +
+                                        '<div>' + '<b>Tipo de atendimento: </b>' + atendimentoType + '<div>' +
+                                        '<div>' + '<b>Tipo de especialização: </b>' + especializacaoType + '<div>' +
+                                        '<div>' + '<b>Tipo de abordagem: </b>' + abordagemType + '<div>' +
+                                        '<div>' + '<b>Convênio: </b>' + haveConvenio + '<div>' +
+                                        '<div>' + '<b>Nome do Convênio: </b>' + nomeConvenio + '<div>' +
+                                        '<div>' + '<b>Contatar: </b>' + haveContatar + '<div>' +
+                                        '<div>' + '<b>Tipo de Contato: </b>' + contatoList + '<div>' +
+                                        '<div>' + '<b>Período de Contato: </b>' + periodoList + '<div>' +
+                                        '</br>' +
+                                        '<div>' + 'Obrigado por utilizar o IndicaPsico (www.indicapsico.com.br)' + '</div>';
+                                } else{
+                                    var html =
+                                        '<div>' + 'Olá ' + name + ', sua proposta foi enviada ao IndicaPsico' +
+                                        ' Pedimos agora que aguarde o nosso contato com a sugestão de psicólogos conforme sua necessidade. Abaixo você pode revisar as informações que você enviou:' + '</div>' +
+                                        '</br>' +
+                                        '<div>' + '<b>Nome: </b>' + name + '</div>' +
+                                        '<div>' + '<b>Email: </b>' + email + '</div>' +
+                                        '<div>' + '<b>Telefone: </b>' + phone + '<div>' +
+                                        '<div>' + '<b>Endereço: </b>' + address + '<div>' +
+                                        '<div>' + '<b>Valor: </b>' + valores + '<div>' +
+                                        '<div>' + '<b>Tipo de atendimento: </b>' + atendimentoType + '<div>' +
+                                        '<div>' + '<b>Tipo de especialização: </b>' + especializacaoType + '<div>' +
+                                        '<div>' + '<b>Tipo de abordagem: </b>' + abordagemType + '<div>' +
+                                        '<div>' + '<b>Convênio: </b>' + haveConvenio + '<div>' +
+                                        '<div>' + '<b>Nome do Convênio: </b>' + nomeConvenio + '<div>' +
+                                        '<div>' + '<b>Contatar: </b>' + haveContatar + '<div>' +
+                                        '<div>' + '<b>Tipo de Contato: </b>' + contatoList + '<div>' +
+                                        '<div>' + '<b>Período de Contato: </b>' + periodoList + '<div>' +
+                                        '</br>' +
+                                        '<div>' + 'Obrigado por utilizar o IndicaPsico (www.indicapsico.com.br)' + '</div>';
+                                }
                                 Meteor.call('sendEmail',
                                     email,
                                     'contato@indicapsico.com.br',
@@ -254,15 +265,4 @@ Template.indicaForm.events({
             });
         }
     }
-});
-
-Template.confirmSubmitForm.onRendered(function () {
-    window.google_trackConversion({
-        google_conversion_id: 972021336,
-        google_conversion_language: "en",
-        google_conversion_format: "3",
-        google_conversion_color: "ffffff",
-        google_conversion_label: "gkR8CKCSlGgQ2Ly_zwM",
-        google_remarketing_only: false
-    });
 });

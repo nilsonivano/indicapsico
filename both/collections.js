@@ -121,6 +121,10 @@ psicoRequestSchema = new SimpleSchema({
         type: [String],
         optional: true
     },
+    discountCode: {
+        type: String,
+        optional: true
+    },
     createdAt: {
         type: Date,
         autoValue: function() {

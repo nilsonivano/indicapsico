@@ -3,9 +3,9 @@ Router.route('/', {
     template: 'indicaPsicoHome'
 });
 
-Router.route('/confirmSubmitForm', {
-    name: 'confirmSubmitForm',
-    template: 'confirmSubmitForm'
+Router.route('/discount', {
+    name: 'indicaPsicoHomeDiscount',
+    template: 'indicaPsicoHomeDiscount'
 });
 
 Router.route('/userLeads', {
