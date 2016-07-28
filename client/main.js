@@ -1,6 +1,6 @@
-import { Meteor } from 'meteor/meteor';
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import {Meteor} from 'meteor/meteor';
+import {Template} from 'meteor/templating';
+import {ReactiveVar} from 'meteor/reactive-var';
 import './main.html';
 
 Template.indicaPsicoHome.onRendered(function () {
@@ -10,7 +10,6 @@ Template.indicaPsicoHome.onRendered(function () {
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
-    $('#contatoForm').hide();
     $('.scrollspy').scrollSpy();
     Tracker.autorun(function () {
         perc = Session.get("scrollPercentage");
@@ -79,13 +78,7 @@ Template.indicaForm.events({
             haveConvenio = false;
         }
         var nomeConvenio = $('#nomeConvenio').val();
-        var checkContatar = $('input[name="contato"]:checked').val();
-        var haveContatar = $('input[name="contato"]:checked').val();
-        if (haveContatar == "contatoSim") {
-            haveContatar = true;
-        } else {
-            haveContatar = false;
-        }
+        var haveContatar = true;
         var tipoContato = $('input[name=tipoContato]:checked');
         var contatoList = [];
         if (tipoContato) {
@@ -102,16 +95,16 @@ Template.indicaForm.events({
                 periodoList.push(periodo);
             }
         }
-        if (name && email && address && valores && checkConvenio && checkContatar) {
+        if (name && email && address && valores && checkConvenio) {
             //Test Regex (Zipcode or Bairro)
             var zipcodeRegex1 = /^[0-9]{5}-[0-9]{3}$/;
             var zipcodeRegex2 = /^[0-9]{8}$/;
-            if(zipcodeRegex1.test(address) || zipcodeRegex2.test(address)){
+            if (zipcodeRegex1.test(address) || zipcodeRegex2.test(address)) {
                 addressType = 'zipcode'
-            } else{
+            } else {
                 addressType = 'bairro'
             }
-            switch(addressType){
+            switch (addressType) {
                 case 'zipcode':
                     break;
                 case 'bairro':
@@ -119,8 +112,8 @@ Template.indicaForm.events({
                     break
             }
             console.log(addressType);
-            Meteor.call('getGeocodeFromAddress',address, function(err,res){
-                if(res){
+            Meteor.call('getGeocodeFromAddress', address, function (err, res) {
+                if (res) {
                     var addressGeocode = {
                         lat: res[0].latitude,
                         lng: res[0].longitude,
@@ -131,10 +124,11 @@ Template.indicaForm.events({
 
                     var path = Router.current().route.path();
                     var discountCode = "";
-                    if (path = "/discount"){
+                    if (path == "/discount") {
                         var random = Math.random().toString(36).substring(7);
-                        discountCode = 'IP'+ random;
+                        discountCode = 'IP' + random;
                     }
+                    console.log(discountCode);
                     Meteor.call('insertRequestPsico', name, email, phone, address, addressGeocode, valores, atendimentoType, especializacaoType, abordagemType,
                         haveConvenio, nomeConvenio, haveContatar, contatoList, periodoList, discountCode, function (err, results) {
                             if (err) {
@@ -151,7 +145,7 @@ Template.indicaForm.events({
                                     haveContatar = "Não"
                                 }
                                 //Sending emails
-                                if(discountCode.length > 1){
+                                if (discountCode.length > 1) {
                                     var html =
                                         '<div>' + 'Olá ' + name + ', sua proposta foi enviada ao IndicaPsico. ' +
                                         'Seu código para utilizar os 50% de desconto em sua primeira consulta é ' + '<b>' + discountCode + '</b>' + '. Utilize este código em sua primeira consulta com o profissional que iremos indicar. ' +
@@ -172,7 +166,7 @@ Template.indicaForm.events({
                                         '<div>' + '<b>Período de Contato: </b>' + periodoList + '<div>' +
                                         '</br>' +
                                         '<div>' + 'Obrigado por utilizar o IndicaPsico (www.indicapsico.com.br)' + '</div>';
-                                } else{
+                                } else {
                                     var html =
                                         '<div>' + 'Olá ' + name + ', sua proposta foi enviada ao IndicaPsico' +
                                         ' Pedimos agora que aguarde o nosso contato com a sugestão de psicólogos conforme sua necessidade. Abaixo você pode revisar as informações que você enviou:' + '</div>' +
@@ -252,7 +246,7 @@ Template.indicaForm.events({
                             $("#indicaForm").find('input:text, input:password, input:file, select, textarea').val('');
                             $("#indicaForm").find('input:radio, input:checkbox').removeAttr('checked').removeAttr('selected');
                         });
-                } else{
+                } else {
                     Materialize.toast('CEP ou Bairro Inválido', 5000);
                 }
             })
