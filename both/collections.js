@@ -148,12 +148,16 @@ psicoSchema = new SimpleSchema({
         type: String,
         optional: true
     },
-    servicoType: {
-        type: String,
+    typeAtendimento: {
+        type: [String],
         optional: true
     },
-    abordagemType: {
-        type: String,
+    typeAbordagem: {
+        type: [String],
+        optional: true
+    },
+    typeSpecialization:{
+        type: [String],
         optional: true
     },
     addressGeocode:{
@@ -169,6 +173,14 @@ psicoSchema = new SimpleSchema({
         optional: true
     },
     convenio: {
+        type: [String],
+        optional: true
+    },
+    divulgacao: {
+        type: [String],
+        optional: true
+    },
+    priceRange:{
         type: String,
         optional: true
     }

@@ -148,7 +148,7 @@ Template.indicaForm.events({
                                 if (discountCode.length > 1) {
                                     var html =
                                         '<div>' + 'Olá ' + name + ', sua proposta foi enviada ao IndicaPsico. ' +
-                                        'Seu código para utilizar os 50% de desconto em sua primeira consulta é ' + '<b>' + discountCode + '</b>' + '. Utilize este código em sua primeira consulta com o profissional que iremos indicar. ' +
+                                        'Seu código para utilizar os 50% de desconto em seu primeiro mês de tratamento é ' + '<b>' + discountCode + '</b>' + '. Utilize este código em sua primeira consulta com o profissional que iremos indicar. ' +
                                         ' Pedimos agora que aguarde o nosso contato com a sugestão de psicólogos conforme sua necessidade. Abaixo você pode revisar as informações que você enviou:' + '</div>' +
                                         '</br>' +
                                         '<div>' + '<b>Nome: </b>' + name + '</div>' +

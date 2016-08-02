@@ -25,7 +25,14 @@
                 </div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col s6 offset-s3">
+                {{> cardUserLead user = selectedLead}}
+            </div>
+        </div>
+        <div class="row center">
+            <button class="btn" id="downloadUserLead">Download ficha paciente</button>
+        </div>
         <div class="row">
             {{#if userNearPsicosInfo}}
                 {{#each psico in userNearPsicosInfo}}
@@ -36,8 +43,12 @@
                             <p>Distância: {{psico.distance}} km</p>
                             <p>Telefone: {{psico.contacts.phone}}</p>
                             <p>Email: {{psico.contacts.email}}</p>
-                            <p>Tipo de Serviço: {{psico.servicoType}}</p>
-                            <p>Tipo de Abordagem: {{psico.abordagemType}}</p>
+                            <p>Tipo de Atendimento: {{psico.typeAtendimento}}</p>
+                            <p>Tipo de Abordagem: {{psico.typeAbordagem}}</p>
+                            <p>Especialização: {{psico.typeSpecialization}}</p>
+                            <p>Lista Convênio: {{psico.convenio}}</p>
+                            <p>Preço da consulta: {{psico.priceRange}}</p>
+                            <p>Tipo de divulgação: {{psico.divulgacao}}</p>
                         </div>
                     </div>
                 {{/each}}
@@ -51,7 +62,8 @@
                     <tr>
                         <th data-field="id">Nome</th>
                         <th data-field="name">email</th>
-                        <th data-field="price">Local de atendimento</th>
+                        <th data-field="local">Local de atendimento</th>
+                        <th data-field="dateCreated">Criado em</th>
                     </tr>
                     </thead>
 
@@ -61,6 +73,7 @@
                             <td>{{user.name}}</td>
                             <td>{{user.email}}</td>
                             <td>{{user.address}}</td>
+                            <td>{{user.createdAt}}</td>
                         </tr>
                     {{/each}}
                     </tbody>
@@ -69,4 +82,39 @@
         </div>
         </body>
     {{/if}}
+</template>
+
+<template name="cardUserLead">
+    <div class="card-panel" id="cardUserLead">
+        <div class="row valign-wrapper">
+            <img class="responsive-img valign " src="/img/logo_indicapsico.png" style="width: 30px; margin-right: 10px">
+            <span class="valign" style="font-size: 20px">Ficha do Paciente</span>
+        </div>
+        <p>Nome: {{user.name}}</p>
+        <p>Local para o atendimento: {{user.addressGeocode.address}}</p>
+        <p>Telefone: {{user.phone}}</p>
+        <p>Email: {{user.email}}</p>
+        {{#if user.atendimentoType}}
+            <p>Tipo de Atendimento: {{user.atendimentoType}}</p>
+        {{/if}}
+        {{#if user.especializacaoType}}
+            <p>Especialização do atendimento: {{user.especializacaoType}}</p>
+        {{/if}}
+        {{#if user.abordagemType}}
+            <p>Tipo de Abordagem: {{user.abordagemType}}</p>
+        {{/if}}
+        {{#if user.convenioName}}
+            <p>Convênio: {{user.convenioName}}</p>
+        {{/if}}
+        {{#if user.valoresRange}}
+            <p>Valor a ser pago por consulta: {{user.valoresRange}}</p>
+        {{/if}}
+        {{#if user.contatoType}}
+            <p>Quer ser contatado por: {{user.contatoType}}</p>
+        {{/if}}
+        {{#if user.contatoHorario}}
+            <p>Melhores horários para realizar o contato: {{user.contatoHorario}}</p>
+        {{/if}}
+        <div class="right grey-text" style="font-size: 12px">www.indicapsico.com.br</div>
+    </div>
 </template>

@@ -5,6 +5,7 @@
     "start": "meteor run"
   },
   "dependencies": {
+    "dom-to-image": "^2.5.1",
     "jquery": "^3.0.0",
     "materialize-css": "^0.97.6",
     "mdi": "^1.6.50",

@@ -20,6 +20,7 @@ placeMarkerLead = function(PsicoLeads,map,markerImage, PsicoDatabase){
             var contatoType =  PsicoLeads[i].contatoType;
             var contatoHorario =  PsicoLeads[i].contatoHorario;
             var createdAt = PsicoLeads[i].createdAt;
+            var id = PsicoLeads[i]._id;
             var contentString =
                 '<div>' + '<b>Nome: </b>' + name + '</div>' +
                 '<div style="max-width: 250px">' + '<b>Endereço: </b>' + address + '</div>' +
@@ -41,14 +42,15 @@ placeMarkerLead = function(PsicoLeads,map,markerImage, PsicoDatabase){
                 map: map,
                 position: LatLng,
                 icon: markerImage,
-                infowindow: infowindow
+                infowindow: infowindow,
+                userLeadId: id
             });
             markersOld[i] = marker;
             google.maps.event.addListener(marker, 'click', function() {
                 this.infowindow.open(map, this);
-                console.log(this.position.lat());
                 var markerLoc = {lat: this.position.lat(),lng: this.position.lng()};
                 Session.set('userNearPsicosInfo',getNearPsicos(markerLoc, PsicoDatabase,6));
+                Session.set('selectedLead',psicoRequest.find({_id: this.userLeadId}).fetch());
             });
             bounds.extend(marker.getPosition());
         }
@@ -72,9 +74,11 @@ placeMarkerPsico = function(PsicoArray,map,markerImage){
             var phone = PsicoArray[i].contacts.phone;
             var email = PsicoArray[i].contacts.email;
             var website = PsicoArray[i].contacts.website;
-            var abordagemType = PsicoArray[i].abordagemType;
-            var servicoType = PsicoArray[i].servicoType;
+            var typeAbordagem = PsicoArray[i].typeAbordagem;
+            var typeAtendimento = PsicoArray[i].typeAtendimento;
+            var typeSpecialization = PsicoArray[i].typeSpecialization;
             var convenio = PsicoArray[i].convenio;
+            var divulgacao = PsicoArray[i].divulgacao;
             var contentString =
                 '<div>' + '<b>Nome: </b>' + name + '</div>' +
                 '<div>' + '<b>CRP: </b>' + crp + '</div>' +
@@ -83,8 +87,10 @@ placeMarkerPsico = function(PsicoArray,map,markerImage){
                 '<div>' + '<b>Telefone: </b>' + phone + '</div>' +
                 '<div>' + '<b>Website: </b>' + website + '</div>' +
                 '<div>' + '<b>Convênio: </b>' + convenio + '</div>' +
-                '<div>' + '<b>Tipo de Serviço: </b>' + servicoType + '</div>' +
-                '<div>' + '<b>Tipo de Abordagem: </b>' + abordagemType + '</div>';
+                '<div>' + '<b>Tipo de Atendimento: </b>' + typeAtendimento + '</div>' +
+                '<div>' + '<b>Tipo de Abordagem: </b>' + typeAbordagem + '</div>' +
+                '<div>' + '<b>Tipo de Especialização: </b>' + typeSpecialization + '</div>' +
+                '<div>' + '<b>Tipo de Divulgação: </b>' + divulgacao + '</div>';
             var infowindow = new google.maps.InfoWindow({
                 content: contentString
             });

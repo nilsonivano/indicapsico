@@ -8,7 +8,6 @@ Template.indicaPsicoHomeDiscount.onRendered(function () {
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
-    $('#contatoForm').hide();
     $('.scrollspy').scrollSpy();
     Tracker.autorun(function () {
         perc = Session.get("scrollPercentage");
