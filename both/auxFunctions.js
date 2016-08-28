@@ -49,7 +49,7 @@ placeMarkerLead = function(PsicoLeads,map,markerImage, PsicoDatabase){
             google.maps.event.addListener(marker, 'click', function() {
                 this.infowindow.open(map, this);
                 var markerLoc = {lat: this.position.lat(),lng: this.position.lng()};
-                Session.set('userNearPsicosInfo',getNearPsicos(markerLoc, PsicoDatabase,6));
+                Session.set('userNearPsicosInfo',getNearPsicos(markerLoc, PsicoDatabase,12));
                 Session.set('selectedLead',psicoRequest.find({_id: this.userLeadId}).fetch());
             });
             bounds.extend(marker.getPosition());
@@ -79,6 +79,7 @@ placeMarkerPsico = function(PsicoArray,map,markerImage){
             var typeSpecialization = PsicoArray[i].typeSpecialization;
             var convenio = PsicoArray[i].convenio;
             var divulgacao = PsicoArray[i].divulgacao;
+            var source = PsicoArray[i].source;
             var contentString =
                 '<div>' + '<b>Nome: </b>' + name + '</div>' +
                 '<div>' + '<b>CRP: </b>' + crp + '</div>' +
@@ -90,7 +91,8 @@ placeMarkerPsico = function(PsicoArray,map,markerImage){
                 '<div>' + '<b>Tipo de Atendimento: </b>' + typeAtendimento + '</div>' +
                 '<div>' + '<b>Tipo de Abordagem: </b>' + typeAbordagem + '</div>' +
                 '<div>' + '<b>Tipo de Especialização: </b>' + typeSpecialization + '</div>' +
-                '<div>' + '<b>Tipo de Divulgação: </b>' + divulgacao + '</div>';
+                '<div>' + '<b>Tipo de Divulgação: </b>' + divulgacao + '</div>' +
+                '<div>' + '<b>Fonte: </b>' + source + '</div>';
             var infowindow = new google.maps.InfoWindow({
                 content: contentString
             });

@@ -60,7 +60,8 @@ Meteor.methods({
                 },
                 convenio: psicoObject.convenio,
                 divulgacao: psicoObject.divulgacao,
-                priceRange: psicoObject.priceRange
+                priceRange: psicoObject.priceRange,
+                source: psicoObject.source
             })
         )
     }

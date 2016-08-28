@@ -14,8 +14,10 @@ Template.adminPsicoPanel.events({
                 var csvdata = results.data;
                 if (csvdata) {
                     console.log(csvdata);
+                    Session.set(csvdata, 'csvdata');
                     for (data of csvdata) {
                         // split String if needed
+                        var source = data.source;
                         var abordagem = data.typeAbordagem;
                         var especializacao = data.typeSpecialization;
                         var convenio = data.convenio;
@@ -28,6 +30,7 @@ Template.adminPsicoPanel.events({
                         var atendimentoSplit = atendimento.split(",").filter(Boolean);
 
                         var psicoObject = {
+                            source: data.source,
                             name: data.name,
                             crp: data.crp,
                             typeAtendimento: atendimentoSplit,

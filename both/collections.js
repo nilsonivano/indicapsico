@@ -183,8 +183,12 @@ psicoSchema = new SimpleSchema({
     priceRange:{
         type: String,
         optional: true
+    },
+    source: {
+        type: String,
+        optional: true
     }
-})
+});
 
 psicoRequest.attachSchema(psicoRequestSchema);
 psicoDatabase.attachSchema(psicoSchema);
