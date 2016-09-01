@@ -15,7 +15,14 @@
   },
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.3.1"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {"browsers": ["last 2 versions"]}
+    }
+  },
   "author": "",
   "license": "ISC",
   "description": ""

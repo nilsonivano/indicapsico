@@ -1,6 +1,6 @@
 Router.route('/', {
-    name: 'indicaPsicoHome',
-    template: 'indicaPsicoHome'
+    name: 'main2',
+    template: 'main2'
 });
 
 Router.route('/discount', {
