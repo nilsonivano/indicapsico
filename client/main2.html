@@ -1,14 +1,243 @@
 <template name="main2">
+    <head>
+        <title>IndicaPsico</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion_async.js"
+                charset="utf-8"></script>
+    </head>
+    <body>
     <div id="header">
-
+        <div class="logo">
+            <img src="/img/indicaPsico_logo_white.svg"><span class="logoWriting">IndicaPsico</span>
+        </div>
+        <div class="ui middle aligned centered grid column" style="height: 100%">
+            <div class="row">
+                <div class="column headerContent">
+                    <div class="headerText">Encontre o melhor psicólogo para você</div>
+                    <a id="buttonBuscarProfissionais" href="" class="ui huge inverted download button" style="margin-top: 40px">Buscar
+                        Profissionais</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="description">
-
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div id="description" class="ui grid container centered three column stackable">
+        <div class="wide column">
+            <img src="/img/ic_gratuito.svg">
+            <div class="descriptionTitle">Gratuito</div>
+            <div class="descriptionText">Pesquise o quanto quiser sem pagar nada</div>
+        </div>
+        <div class="wide column">
+            <img src="/img/ic_facilidade.svg">
+            <div class="descriptionTitle">Facilidade</div>
+            <div class="descriptionText">Responda as questões em 1 minuto e enviaremos as melhores opções de
+                profissionais
+            </div>
+        </div>
+        <div class="wide column">
+            <img src="/img/ic_dados_protegidos.svg">
+            <div class="descriptionTitle">Dados Protegidos</div>
+            <div class="descriptionText">Não enviamos nenhuma informação sem sua autorização</div>
+        </div>
     </div>
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
     <div id="form">
-
+        <div class="ui grid container two column stackable">
+            <div id="formTitle" class="row descriptionTitle centered">Encontre um profissional agora</div>
+            <div class="column">
+                <div class="inputLabel">Nome</div>
+                <div class="ui fluid icon input labeled"
+                     data-tooltip="Suas informações são sigilosas e tratadas com muito cuidado.Seu nome só é informado aos profissionais selecionados por você."
+                     data-position="bottom left"
+                     data-variation="wide">
+                    <input id="name" type="text" placeholder="Nome">
+                    <div class="ui corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="inputLabel">E-mail</div>
+                <div class="ui fluid icon input labeled"
+                     data-tooltip="Não se preocupe. Você não receberá uma enxurrada de emails indesejados. Nenhum contato direto é feito pelos profissionais até a sua autorização."
+                     data-position="bottom left">
+                    <input id="email" type="text" placeholder="E-mail">
+                    <div class="ui corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="inputLabel">Telefone de Contato</div>
+                <div class="ui fluid icon input labeled"
+                     data-tooltip="Os profissionais não recebem seu telefone automaticamente. Como no caso do email, só dividimos essa informação após a sua autorização."
+                     data-position="bottom left">
+                    <input id="phone" type="text" placeholder="Telefone de Contato">
+                    <div class="ui corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="inputLabel">Local do Atendimento</div>
+                <div class="ui fluid icon input labeled"
+                     data-tooltip="Qualquer uma das informações é válida. Fique tranquilo, você poderá escolher entre os profissionais mais próximos a você."
+                     data-position="bottom left">
+                    <input id="address" type="text" placeholder="Informar Bairro ou CEP">
+                    <div class="ui corner label">
+                        <i class="asterisk icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="inputLabel">Valores do Atendimento</div>
+                <div class="ui selection dropdown fluid">
+                    <input type="hidden" name="Valores">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Valores</div>
+                    <div id="valores" class="menu">
+                        {{#each valores}}
+                            <div class="item" data-value="{{this}}">{{this}}</div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="inputLabel">Tipo do atendimento</div>
+                <div class="ui selection dropdown fluid">
+                    <input type="hidden" name="Atendimento">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Tipo do atendimento</div>
+                    <div id="atendimentoType" class="menu">
+                        {{#each atendimentoTypes}}
+                            <div class="item" data-value="{{this}}">{{this}}</div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="inputLabel">Tipo da especialização</div>
+                <div class="ui selection dropdown fluid"
+                     data-tooltip="Aqui estão algumas categorias caso você busque um profissional com experiência ou especialização em determinada área. Se você não sabe, não se preocupe, essa informação é opcional.."
+                     data-position="bottom left">
+                    <input type="hidden" name="gender">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Tipo da especialização</div>
+                    <div id="especializacaoType" class="menu">
+                        {{#each especializacaoTypes}}
+                            <div class="item" data-value="{{this}}">{{this}}</div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="inputLabel">Abordagem Clínica</div>
+                <div class="ui selection dropdown fluid"
+                     data-tooltip="Em alguns casos pacientes já buscam determinada abordagem clínica do profissional.Essa informação também é opcional."
+                     data-position="bottom left">
+                    <input type="hidden" name="gender">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Abordagem Clínica</div>
+                    <div id="abordagemType" class="menu">
+                        {{#each abordagemTypes}}
+                            <div class="item" data-value="{{this}}">{{this}}</div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="row">
+                    <div class="ui two column grid">
+                        <div class="inputLabel one column wide"> Possui convênio:</div>
+                        <div class="one column wide">
+                            <div id="haveConvenio" class="ui basic buttons">
+                                <div id="convenioSim" class="ui button">Sim</div>
+                                <div id="convenioNao" class="ui button">Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px">
+                    <div id="nomeConvenio" class="ui fluid icon input disabled">
+                        <input id="convenio" type="text" placeholder="Nome do convênio">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="row inputLabel">
+                    Indique a melhor forma para que o profissional entre em contato
+                </div>
+                <div class="row" style="margin-bottom: 10px">
+                    <div class="ui two column grid">
+                        <div class="one column wide">
+                            <div class="row" style="margin-bottom: 10px">Entrar em contato por:</div>
+                            <div id="tipoContato" class="ui vertical buttons">
+                                <button id="contatoEmail" class="ui toggle button">E-mail</button>
+                                <button id="contatoWhatsapp" class="ui toggle button">WhatsApp</button>
+                                <button id="contatoTelefone" class="ui toggle button">Telefone</button>
+                            </div>
+                        </div>
+                        <div class="one column wide">
+                            <div class="row" style="margin-bottom: 10px">Horários para contato:</div>
+                            <div id="periodoContato" class="ui vertical buttons">
+                                <button id="contatoManha" class="ui toggle button">Manhã</button>
+                                <button id="contatoAlmoco" class="ui toggle button">Almoço</button>
+                                <button id="contatoTarde" class="ui toggle button">Tarde</button>
+                                <button id="contatoNoite" class="ui toggle button">Noite</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui container stackable grid right floated">
+            <div class="row">
+                <button id="requisitaPsico" class="ui button big right floated column">Requisitar</button>
+            </div>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
     </div>
     <div id="footer">
-
+        <div class="ui container grid stackable three column">
+            <div class="column">
+                <div class="footerTitle">Indica Psico</div>
+                <div class="footerText">A melhor maneira de busca o psicólogo perfeito para você. IndicaPsico, a tecnologia a favor da sua saúde.
+                </div>
+            </div>
+            <div class="column" style="display: none">
+                <div class="footerTitle">Sou Psicólogo</div>
+                <div class="footerTitle">Quem somos</div>
+                <div class="footerTitle">Perguntas Frequentes</div>
+                <div class="footerTitle">Termos de uso</div>
+                <div class="footerTitle">Política de privacidade</div>
+            </div>
+            <div class="column">
+                <div class="footerTitle">Links Recomendados</div>
+                <div class="footerText"><a href="http://site.cfp.org.br/">Conselho Federal de Psicologia</a></div>
+                <div class="footerText"><a href="http://www.crpsp.org/site/">Conselho Regional de Psicologogia</a></div>
+                <div class="footerText"><a
+                        href="http://site.cfp.org.br/wp-content/uploads/2012/07/Resoluxo_CFP_nx_011-12.pdf">Resolução
+                    CFP nº 11/2012</a></div>
+                <div class="footerText"><a href="http://site.cfp.org.br/wp-content/uploads/2012/07/codigo_etica.pdf">Código
+                    de Ética do Psicólogo</a></div>
+            </div>
+            <div class="column">
+                <div class="footerTitle">
+                    Contato
+                </div>
+                <div class="footerText"><a href="mailto:contato@indicapsico.com.br?Subject=Contato Indica Psico"
+                                           target="_top">contato@indicapsico.com.br</a></div>
+                <div class="footerText">+55 11 98535 0380</div>
+            </div>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="row footerBottom container">
+            © 2016 IndicaPsico - Todos os direitos reservados
+        </div>
     </div>
+    </body>
 </template>

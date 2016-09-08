@@ -65,12 +65,10 @@ Template.indicaForm.events({
         var email = $('#email').val();
         var phone = $('#phone').val();
         var address = $('#address').val();
-        console.log(address);
         var valores = $('#valores').val();
         var atendimentoType = $('#atendimentoType').val();
         var especializacaoType = $('#especializacaoType').val();
         var abordagemType = $('#abordagemType').val();
-        var checkConvenio = $('input[name="convenioGroup"]:checked').val();
         var haveConvenio = $('input[name="convenioGroup"]:checked').val();
         if (haveConvenio == "convenioSim") {
             haveConvenio = true;

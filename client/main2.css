@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+}
+
+#header {
+    height: 500px;
+    background-image: url("/img/indicaPsico_bg1500x1000.jpg");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.logo {
+    position: relative;
+    top: 30px;
+    left: 100px;
+}
+
+.logoWriting {
+    /* IndicaPsico: */
+    font-family: Lato;
+    font-size: 36px;
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+
+.headerContent {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.headerText {
+    font-family: Lato;
+    font-size: 36px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+#form {
+    background-color: #F6F6F6;
+}
+
+.descriptionTitle {
+    margin-top: 20px;
+    font-family: Lato-Medium;
+    font-size: 24px;
+    color: #4A4A4A;
+}
+
+.descriptionText {
+    margin-top: 20px;
+    font-family: Lato-Light;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.87);
+    letter-spacing: 0px;
+}
+
+.inputLabel {
+    font-family: Lato-Bold;
+    font-size: 14px;
+    color: #4A4A4A;
+    margin-bottom: 5px;
+}
+
+.footerTitle {
+    font-family: Lato-Bold;
+    font-size: 14px;
+    color: #5A5A5A;
+    margin-bottom: 10px;
+}
+
+.footerText {
+    font-family: Lato-Light;
+    font-size: 12px;
+    color: #000000;
+    letter-spacing: 0px;
+    line-height: 19px;
+}
+
+.footerBottom{
+    background: #4A90E2;
+    padding: 14px;
+    color: #FFFFFF;
+    font-family: Lato-Medium;
+    font-size: 12px;
+    letter-spacing: 0px;
+}
+@media only screen and (max-width: 767px) {
+    #formTitle {
+        margin: 1em;
+    }
+
+    #requisitaPsico {
+        margin-left: 14px !important;
+        margin-right: 14px !important;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .logo {
+        top: 30px;
+        left: 50px;
+    }
+}

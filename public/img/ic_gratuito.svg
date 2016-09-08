@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="-59.7382812%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#4A90E2" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#4A90E2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-794.000000, -559.000000)" fill="url(#linearGradient-1)">
+            <g id="Group" transform="translate(0.000000, 490.000000)">
+                <g id="Description" transform="translate(54.000000, 69.000000)">
+                    <g transform="translate(639.000000, 0.000000)" id="Shape">
+                        <path d="M151,2.22044605e-15 C164.260824,1.11022302e-15 176.97852,5.26784202 186.355339,14.6446609 C195.732158,24.0214799 201,36.7391755 201,50 C201,77.6142375 178.614237,100 151,100 C137.739176,100 125.02148,94.732158 115.644661,85.3553391 C106.267842,75.9785201 101,63.2608245 101,50 C101,36.7391755 106.267842,24.0214799 115.644661,14.6446609 C125.02148,5.26784202 137.739176,2.22044605e-15 151,0 L151,2.22044605e-15 Z M151,10 C128.90861,10 111,27.90861 111,50 C111,72.09139 128.90861,90 151,90 C161.60866,90 171.782816,85.7857264 179.284271,78.2842712 C186.785726,70.7828161 191,60.6086596 191,50 C191,27.90861 173.09139,10 151,10 L151,10 Z M146,75 L146,70 L136,70 L136,60 L156,60 L156,55 L141,55 C138.238576,55 136,52.7614237 136,50 L136,35 C136,32.2385763 138.238576,30 141,30 L146,30 L146,25 L156,25 L156,30 L166,30 L166,40 L146,40 L146,45 L161,45 C163.761424,45 166,47.2385763 166,50 L166,65 C166,67.7614237 163.761424,70 161,70 L156,70 L156,75 L146,75 L146,75 Z"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
