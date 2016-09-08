@@ -224,7 +224,7 @@ Template.main2.events({
                                 eventLabel: 'Envio com sucesso'
                             });
                             $('#requisitaPsico').removeClass('loading');
-                            toastr.success('Sua requisição foi enviada com sucesso. Em breve um de nossos psicólgos entrará em contato')
+                            toastr.success('Sua requisição foi enviada com sucesso. Em breve um de nossos psicólogos entrará em contato')
                             window.google_trackConversion({
                                 google_conversion_id: 972021336,
                                 google_conversion_language: "en",

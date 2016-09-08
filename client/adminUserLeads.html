@@ -7,58 +7,64 @@
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         </head>
         <body>
-        <div class="container">
-            <h4>Indica Psico Leads</h4>
+        <div class="ui container grid two column">
             <div class="row">
-                <div class="col s6">
+                <h4>Indica Psico Leads</h4>
+            </div>
+            <div class="row">
+                <div class="column">
                     Lead Count: {{leadCount}}
                 </div>
-                <div class="col s6">
+                <div class="column">
                     Psico Count: {{psicoCount}}
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="ui container">
+            <div class="mapUserLeads">
+                {{> googleMap name="mapUserLeads" options=mapUserLeads}}
+            </div>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="ui container grid two column centered">
             <div class="row">
-                <div class="mapUserLeads">
-                    {{> googleMap name="mapUserLeads" options=mapUserLeads}}
+                <div class="column">
+                    {{> cardUserLead user = selectedLead}}
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col s6 offset-s3">
-                {{> cardUserLead user = selectedLead}}
+            <div class="row">
+                <button class="ui button big" id="downloadUserLead">Download ficha paciente</button>
             </div>
         </div>
-        <div class="row center">
-            <button class="btn" id="downloadUserLead">Download ficha paciente</button>
-        </div>
-        <div class="row">
+        <div class="ui container grid three column">
             {{#if userNearPsicosInfo}}
                 {{#each psico in userNearPsicosInfo}}
-                    <div class="col s4">
-                        <div class="card-panel" style="height: 450px; overflow: scroll">
-                            <p>Nome: {{psico.name}}</p>
-                            <p>Endereço: {{psico.addressGeocode.address}}</p>
-                            <p>Distância: {{psico.distance}} km</p>
-                            <p>Telefone: {{psico.contacts.phone}}</p>
-                            <p>Email: {{psico.contacts.email}}</p>
-                            <p>Tipo de Atendimento: {{psico.typeAtendimento}}</p>
-                            <p>Tipo de Abordagem: {{psico.typeAbordagem}}</p>
-                            <p>Especialização: {{psico.typeSpecialization}}</p>
-                            <p>Lista Convênio: {{psico.convenio}}</p>
-                            <p>Preço da consulta: {{psico.priceRange}}</p>
-                            <p>Tipo de divulgação: {{psico.divulgacao}}</p>
-                            <p>Fonte: {{psico.source}}</p>
+                    <div class="column">
+                        <div class="ui card" style="height: 450px; width: 100%; overflow: scroll">
+                            <div class="content">
+                                <div class="header">{{psico.name}}</div>
+                                <div class="meta">{{psico.source}}</div>
+                                <div class="description">
+                                    <p>Endereço: {{psico.addressGeocode.address}}</p>
+                                    <p>Distância: {{psico.distance}} km</p>
+                                    <p>Telefone: {{psico.contacts.phone}}</p>
+                                    <p>Email: {{psico.contacts.email}}</p>
+                                    <p>Tipo de Atendimento: {{psico.typeAtendimento}}</p>
+                                    <p>Tipo de Abordagem: {{psico.typeAbordagem}}</p>
+                                    <p>Especialização: {{psico.typeSpecialization}}</p>
+                                    <p>Lista Convênio: {{psico.convenio}}</p>
+                                    <p>Preço da consulta: {{psico.priceRange}}</p>
+                                    <p>Tipo de divulgação: {{psico.divulgacao}}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 {{/each}}
             {{/if}}
         </div>
-        <div class="container">
-
+        <div class="ui container grid">
             <div class="row">
-                <table class="striped centered">
+                <table class="ui celled table">
                     <thead>
                     <tr>
                         <th data-field="id">Nome</th>
@@ -86,36 +92,42 @@
 </template>
 
 <template name="cardUserLead">
-    <div class="card-panel" id="cardUserLead">
-        <div class="row valign-wrapper">
-            <img class="responsive-img valign " src="/img/logo_indicapsico.png" style="width: 30px; margin-right: 10px">
-            <span class="valign" style="font-size: 20px">Ficha do Paciente</span>
+    <div id="cardUserLead" class="ui card" style="width: 100%;">
+        <div class="content">
+            <div>
+                <div class="row">
+                    <img src="/img/logo_indicapsico.png" style="width: 30px; margin-right: 10px">
+                    <span style="font-size: 20px">Ficha do Paciente</span>
+                </div>
+            </div>
+            <div class="description">
+                <p>Nome: {{user.name}}</p>
+                <p>Local para o atendimento: {{user.addressGeocode.address}}</p>
+                <p>Telefone: {{user.phone}}</p>
+                <p>Email: {{user.email}}</p>
+                {{#if user.atendimentoType}}
+                    <p>Tipo de Atendimento: {{user.atendimentoType}}</p>
+                {{/if}}
+                {{#if user.especializacaoType}}
+                    <p>Especialização do atendimento: {{user.especializacaoType}}</p>
+                {{/if}}
+                {{#if user.abordagemType}}
+                    <p>Tipo de Abordagem: {{user.abordagemType}}</p>
+                {{/if}}
+                {{#if user.convenioName}}
+                    <p>Convênio: {{user.convenioName}}</p>
+                {{/if}}
+                {{#if user.valoresRange}}
+                    <p>Valor a ser pago por consulta: {{user.valoresRange}}</p>
+                {{/if}}
+                {{#if user.contatoType}}
+                    <p>Quer ser contatado por: {{user.contatoType}}</p>
+                {{/if}}
+                {{#if user.contatoHorario}}
+                    <p>Melhores horários para realizar o contato: {{user.contatoHorario}}</p>
+                {{/if}}
+                <div class="right" style="font-size: 12px">www.indicapsico.com.br</div>
+            </div>
         </div>
-        <p>Nome: {{user.name}}</p>
-        <p>Local para o atendimento: {{user.addressGeocode.address}}</p>
-        <p>Telefone: {{user.phone}}</p>
-        <p>Email: {{user.email}}</p>
-        {{#if user.atendimentoType}}
-            <p>Tipo de Atendimento: {{user.atendimentoType}}</p>
-        {{/if}}
-        {{#if user.especializacaoType}}
-            <p>Especialização do atendimento: {{user.especializacaoType}}</p>
-        {{/if}}
-        {{#if user.abordagemType}}
-            <p>Tipo de Abordagem: {{user.abordagemType}}</p>
-        {{/if}}
-        {{#if user.convenioName}}
-            <p>Convênio: {{user.convenioName}}</p>
-        {{/if}}
-        {{#if user.valoresRange}}
-            <p>Valor a ser pago por consulta: {{user.valoresRange}}</p>
-        {{/if}}
-        {{#if user.contatoType}}
-            <p>Quer ser contatado por: {{user.contatoType}}</p>
-        {{/if}}
-        {{#if user.contatoHorario}}
-            <p>Melhores horários para realizar o contato: {{user.contatoHorario}}</p>
-        {{/if}}
-        <div class="right grey-text" style="font-size: 12px">www.indicapsico.com.br</div>
     </div>
 </template>
